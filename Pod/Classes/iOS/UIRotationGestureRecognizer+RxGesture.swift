@@ -22,7 +22,7 @@ import RxSwift
 import RxCocoa
 
 /// Default values for `UIRotationGestureRecognizer` configuration
-fileprivate enum Defaults {
+enum Defaults {
     static var configuration: ((UIRotationGestureRecognizer) -> Void)? = nil
 }
 

@@ -22,7 +22,7 @@ import RxSwift
 import RxCocoa
 
 /// Default values for `UIScreenEdgePanGestureRecognizer` configuration
-fileprivate enum Defaults {
+enum Defaults {
     static var configuration: ((UIScreenEdgePanGestureRecognizer) -> Void)? = nil
 }
 
