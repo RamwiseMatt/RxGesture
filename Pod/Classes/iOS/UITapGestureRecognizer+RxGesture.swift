@@ -22,7 +22,7 @@ import RxSwift
 import RxCocoa
 
 /// Default values for `UITapGestureRecognizer` configuration
-enum Defaults {
+enum LongPressDefaults {
     static var numberOfTouchesRequired: Int = 1
     static var numberOfTapsRequired: Int = 1
     static var configuration: ((UITapGestureRecognizer) -> Void)? = nil
@@ -41,7 +41,7 @@ public struct TapGestureRecognizerFactory: GestureRecognizerFactory {
      */
     public init(
         numberOfTouchesRequired: Int = Defaults.numberOfTouchesRequired,
-        numberOfTapsRequired: Int = Defaults.numberOfTapsRequired,
+        numberOfTapsRequired: Int = LongPressDefaults.numberOfTapsRequired,
         configuration: ((UITapGestureRecognizer) -> Void)? = Defaults.configuration
         ){
         self.configuration = { gesture in
@@ -62,7 +62,7 @@ extension AnyGestureRecognizerFactory {
      */
     public static func tap(
         numberOfTouchesRequired: Int = Defaults.numberOfTouchesRequired,
-        numberOfTapsRequired: Int = Defaults.numberOfTapsRequired,
+        numberOfTapsRequired: Int = LongPressDefaults.numberOfTapsRequired,
         configuration: ((UITapGestureRecognizer) -> Void)? = Defaults.configuration
         ) -> AnyGestureRecognizerFactory {
         let gesture = TapGestureRecognizerFactory(
@@ -84,7 +84,7 @@ public extension Reactive where Base: UIView {
      */
     public func tapGesture(
         numberOfTouchesRequired: Int = Defaults.numberOfTouchesRequired,
-        numberOfTapsRequired: Int = Defaults.numberOfTapsRequired,
+        numberOfTapsRequired: Int = LongPressDefaults.numberOfTapsRequired,
         configuration: ((UITapGestureRecognizer) -> Void)? = Defaults.configuration
         ) -> ControlEvent<UITapGestureRecognizer> {
 

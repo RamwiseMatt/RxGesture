@@ -22,7 +22,7 @@ import RxSwift
 import RxCocoa
 
 /// Default values for `UISwipeGestureRecognizer` configuration
-enum Defaults {
+enum LongPressDefaults {
     static var numberOfTouchesRequired: Int = 1
     static var configuration: ((UISwipeGestureRecognizer) -> Void)? = nil
 }
