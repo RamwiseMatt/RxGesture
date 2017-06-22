@@ -33,8 +33,8 @@ extension Reactive where Base: View {
      - returns: a `ControlEvent<G>` that re-emit the gesture recognizer itself
      */
     public func anyGesture(_ factories: (AnyGestureRecognizerFactory, when: GestureRecognizerState)...) -> ControlEvent<GestureRecognizer> {
-        let observables = factories.map { gesture, state in
-            self.gesture(gesture).when(state).asObservable() as Observable<GestureRecognizer>
+        let observables = factories.map { tuple in
+            self.gesture(tuple.0).when(tuple.1).asObservable() as Observable<GestureRecognizer>
         }
         let source = Observable.from(observables).merge()
         return ControlEvent(events: source)
