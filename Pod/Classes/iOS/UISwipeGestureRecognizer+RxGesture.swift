@@ -22,7 +22,7 @@ import RxSwift
 import RxCocoa
 
 /// Default values for `UISwipeGestureRecognizer` configuration
-enum Defaults {
+enum SwipeDefaults {
     static var numberOfTouchesRequired: Int = 1
     static var configuration: ((UISwipeGestureRecognizer) -> Void)? = nil
 }
@@ -39,8 +39,8 @@ public struct SwipeGestureRecognizerFactory: GestureRecognizerFactory {
      */
     public init(
         _ direction: UISwipeGestureRecognizerDirection,
-        numberOfTouchesRequired: Int = Defaults.numberOfTouchesRequired,
-        configuration: ((UISwipeGestureRecognizer) -> Void)? = Defaults.configuration
+        numberOfTouchesRequired: Int = SwipeDefaults.numberOfTouchesRequired,
+        configuration: ((UISwipeGestureRecognizer) -> Void)? = SwipeDefaults.configuration
         ){
         self.configuration = { gesture in
             gesture.direction = direction
@@ -59,8 +59,8 @@ extension AnyGestureRecognizerFactory {
      */
     public static func swipe(
         _ direction: UISwipeGestureRecognizerDirection,
-        numberOfTouchesRequired: Int = Defaults.numberOfTouchesRequired,
-        configuration: ((UISwipeGestureRecognizer) -> Void)? = Defaults.configuration
+        numberOfTouchesRequired: Int = SwipeDefaults.numberOfTouchesRequired,
+        configuration: ((UISwipeGestureRecognizer) -> Void)? = SwipeDefaults.configuration
         ) -> AnyGestureRecognizerFactory {
         let gesture = SwipeGestureRecognizerFactory(
             direction,
@@ -81,8 +81,8 @@ public extension Reactive where Base: UIView {
      */
     public func swipeGesture(
         _ direction: UISwipeGestureRecognizerDirection,
-        numberOfTouchesRequired: Int = Defaults.numberOfTouchesRequired,
-        configuration: ((UISwipeGestureRecognizer) -> Void)? = Defaults.configuration
+        numberOfTouchesRequired: Int = SwipeDefaults.numberOfTouchesRequired,
+        configuration: ((UISwipeGestureRecognizer) -> Void)? = SwipeDefaults.configuration
         ) -> ControlEvent<UISwipeGestureRecognizer> {
 
         return gesture(SwipeGestureRecognizerFactory(

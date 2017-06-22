@@ -22,7 +22,7 @@ import RxSwift
 import RxCocoa
 
 /// Default values for `UIRotationGestureRecognizer` configuration
-enum Defaults {
+enum RotationDefaults {
     static var configuration: ((UIRotationGestureRecognizer) -> Void)? = nil
 }
 
@@ -36,7 +36,7 @@ public struct RotationGestureRecognizerFactory: GestureRecognizerFactory {
      - parameter configuration: A closure that allows to fully configure the gesture recognizer
      */
     public init(
-        configuration: ((UIRotationGestureRecognizer) -> Void)? = Defaults.configuration
+        configuration: ((UIRotationGestureRecognizer) -> Void)? = RotationDefaults.configuration
         ){
         self.configuration = { gesture in
             configuration?(gesture)
@@ -51,7 +51,7 @@ extension AnyGestureRecognizerFactory {
      - parameter configuration: A closure that allows to fully configure the gesture recognizer
      */
     public static func rotation(
-        configuration: ((UIRotationGestureRecognizer) -> Void)? = Defaults.configuration
+        configuration: ((UIRotationGestureRecognizer) -> Void)? = RotationDefaults.configuration
         ) -> AnyGestureRecognizerFactory {
         let gesture = RotationGestureRecognizerFactory(
             configuration: configuration
@@ -67,7 +67,7 @@ public extension Reactive where Base: UIView {
      - parameter configuration: A closure that allows to fully configure the gesture recognizer
      */
     public func rotationGesture(
-        configuration: ((UIRotationGestureRecognizer) -> Void)? = Defaults.configuration
+        configuration: ((UIRotationGestureRecognizer) -> Void)? = RotationDefaults.configuration
         ) -> ControlEvent<UIRotationGestureRecognizer> {
         return gesture(RotationGestureRecognizerFactory(
             configuration: configuration
