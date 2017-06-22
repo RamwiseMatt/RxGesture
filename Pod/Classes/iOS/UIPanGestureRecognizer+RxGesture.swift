@@ -23,7 +23,7 @@ import RxCocoa
 
 
 /// Default values for `UIPanGestureRecognizer` configuration
-private enum Defaults {
+fileprivate enum Defaults {
     static var minimumNumberOfTouches: Int = 1
     static var maximumNumberOfTouches: Int = Int.max
     static var configuration: ((UIPanGestureRecognizer) -> Void)? = nil

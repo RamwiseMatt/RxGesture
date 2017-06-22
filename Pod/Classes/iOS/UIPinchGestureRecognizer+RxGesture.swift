@@ -22,7 +22,7 @@ import RxSwift
 import RxCocoa
 
 /// Default values for `UIPinchGestureRecognizer` configuration
-private enum Defaults {
+fileprivate enum Defaults {
     static var configuration: ((UIPinchGestureRecognizer) -> Void)? = nil
 }
 
