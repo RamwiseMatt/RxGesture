@@ -23,8 +23,8 @@ import RxCocoa
 
 /// Default values for `UISwipeGestureRecognizer` configuration
 public enum SwipeDefaults {
-    static var numberOfTouchesRequired: Int = 1
-    static var configuration: ((UISwipeGestureRecognizer) -> Void)? = nil
+    static public var numberOfTouchesRequired: Int = 1
+    static public var configuration: ((UISwipeGestureRecognizer) -> Void)? = nil
 }
 
 /// A `GestureRecognizerFactory` for `UISwipeGestureRecognizer`

@@ -23,11 +23,11 @@ import RxCocoa
 
 /// Default values for `UILongPressGestureRecognizer` configuration
 public enum LongPressDefaults {
-    static var numberOfTouchesRequired: Int = 1
-    static var numberOfTapsRequired: Int = 0
-    static var minimumPressDuration: CFTimeInterval = 0.5
-    static var allowableMovement: CGFloat = 10
-    static var configuration: ((UILongPressGestureRecognizer) -> Void)? = nil
+    static public var numberOfTouchesRequired: Int = 1
+    static public var numberOfTapsRequired: Int = 0
+    static public var minimumPressDuration: CFTimeInterval = 0.5
+    static public var allowableMovement: CGFloat = 10
+    static public var configuration: ((UILongPressGestureRecognizer) -> Void)? = nil
 }
 
 /// A `GestureRecognizerFactory` for `UITapGestureRecognizer`

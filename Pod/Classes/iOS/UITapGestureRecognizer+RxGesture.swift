@@ -23,9 +23,9 @@ import RxCocoa
 
 /// Default values for `UITapGestureRecognizer` configuration
 public enum TapDefaults {
-    static var numberOfTouchesRequired: Int = 1
-    static var numberOfTapsRequired: Int = 1
-    static var configuration: ((UITapGestureRecognizer) -> Void)? = nil
+    static public var numberOfTouchesRequired: Int = 1
+    static public var numberOfTapsRequired: Int = 1
+    static public var configuration: ((UITapGestureRecognizer) -> Void)? = nil
 }
 
 /// A `GestureRecognizerFactory` for `UITapGestureRecognizer`

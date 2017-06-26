@@ -23,7 +23,7 @@ import RxCocoa
 
 /// Default values for `UIScreenEdgePanGestureRecognizer` configuration
 public enum ScreenEdgePanDefaults {
-    static var configuration: ((UIScreenEdgePanGestureRecognizer) -> Void)? = nil
+    static public var configuration: ((UIScreenEdgePanGestureRecognizer) -> Void)? = nil
 }
 
 /// A `GestureRecognizerFactory` for `UIScreenEdgePanGestureRecognizer`

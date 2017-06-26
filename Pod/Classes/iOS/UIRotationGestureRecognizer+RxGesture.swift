@@ -23,7 +23,7 @@ import RxCocoa
 
 /// Default values for `UIRotationGestureRecognizer` configuration
 public enum RotationDefaults {
-    static var configuration: ((UIRotationGestureRecognizer) -> Void)? = nil
+    static public var configuration: ((UIRotationGestureRecognizer) -> Void)? = nil
 }
 
 /// A `GestureRecognizerFactory` for `UIRotationGestureRecognizer`

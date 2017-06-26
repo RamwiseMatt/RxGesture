@@ -23,7 +23,7 @@ import RxCocoa
 
 /// Default values for `UIPinchGestureRecognizer` configuration
 public enum PinchDefaults {
-    static var configuration: ((UIPinchGestureRecognizer) -> Void)? = nil
+    static public var configuration: ((UIPinchGestureRecognizer) -> Void)? = nil
 }
 
 /// A `GestureRecognizerFactory` for `UIPinchGestureRecognizer`
