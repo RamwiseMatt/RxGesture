@@ -22,7 +22,7 @@ import RxSwift
 import RxCocoa
 
 /// Default values for `UILongPressGestureRecognizer` configuration
-enum LongPressDefaults {
+public enum LongPressDefaults {
     static var numberOfTouchesRequired: Int = 1
     static var numberOfTapsRequired: Int = 0
     static var minimumPressDuration: CFTimeInterval = 0.5
